@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose  from "mongoose";
 import userRouter from './route/user.js'
+import product from './route/product.js'
 
 const app = express()
 app.use (express.json());
@@ -16,6 +17,7 @@ app.listen(process.env.PORT,()=> {
 
 // routes
 app.use('/api/user', userRouter)
+app.use('/api/product', product)
 
 app.get('/', (req, res)=>{
     res.send('Hello Queen')
